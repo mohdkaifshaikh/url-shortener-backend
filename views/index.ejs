@@ -417,7 +417,7 @@
     type="text"
     name="customAlias"
     placeholder="custom-alias (optional)"
-    pattern="[a-zA-Z0-9_-]+"
+    pattern="[a-zA-Z0-9_-]{3,30}"
     title="Letters, numbers, hyphens and underscores only"
     value="<%= typeof formData !== 'undefined' ? formData.customAlias || '' : '' %>"
   />
