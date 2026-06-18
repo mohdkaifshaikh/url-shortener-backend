@@ -3,7 +3,6 @@ export const validateCreateShortUrl = ({
   originalUrl = "",
   customAlias = "",
 }) => {
-  console.log(originalUrl);//correct output
   originalUrl = originalUrl.trim();
   customAlias = customAlias.trim();
 
@@ -27,6 +26,5 @@ export const validateCreateShortUrl = ({
       "Alias can only contain letters, numbers, hyphens and underscores.",
     );
   }
-  console.log(originalUrl);//correct output
   return { originalUrl, customAlias };
 };

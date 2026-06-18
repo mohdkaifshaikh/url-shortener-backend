@@ -12,7 +12,6 @@ import { validateCreateShortUrl } from "./url.validator.js";
 import { safeURL } from "../../utils/safeURL.js";
 export const createShortUrlService = async ({ data }) => {
   const { originalUrl, customAlias } = validateCreateShortUrl(data);
-  console.log(originalUrl);//no output
   const urlHostname = safeURL(originalUrl)
     .hostname.toLowerCase()
     .replace(/^www\./, "")

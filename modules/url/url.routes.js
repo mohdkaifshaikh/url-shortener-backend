@@ -3,9 +3,12 @@ import { deleteUrl, getUrlInfoForAPI, redirectUrl, shortenUrl, shortenUrlForAPI 
 import { validateShortUrl } from '../../middlewares/validate.middleware.js';
 
 const router=express.Router();
-router.post("/shorten",validateShortUrl,shortenUrl);
+// only used to test APIs
 router.post("/api/url/shorten",validateShortUrl,shortenUrlForAPI);
-router.get("/:code",redirectUrl);
 router.get("/api/url/:code",getUrlInfoForAPI);
+
+// for redirect t original url
+router.post("/shorten",validateShortUrl,shortenUrl);
+router.get("/:code",redirectUrl);
 router.delete("/delete/:code",deleteUrl);
 export default router;

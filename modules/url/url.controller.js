@@ -8,7 +8,6 @@ import asyncHandler from "../../middlewares/asyncHandler.js";
 // 1. shortUrl(): This function generate shorturl using orginalurl and nanoid(shortcode).
 // 2. Ater generating shorturl, store it in database and also store originalurl
 export const shortenUrl = asyncHandler(async (req, res) => {
-  // console.log(req.body);
   const result = await createShortUrlService({data:req.body});
     return res.status(201).json({
     message: "Short URL created successfully",
@@ -17,7 +16,6 @@ export const shortenUrl = asyncHandler(async (req, res) => {
   });
 });
 export const shortenUrlForAPI = asyncHandler(async (req, res) => {
-  // console.log(req.body);
   const result = await createShortUrlService({data:req.body});
     return res.status(201).json({
     message: "Short URL created successfully",
